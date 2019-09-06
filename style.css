@@ -1,0 +1,504 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Museo Sans Cyrl 500";
+  color: #302783;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***** Museo *****/
+@font-face {
+  font-family: 'Museo Sans Cyrl 700';
+  src: url("fonts/museo/MuseoSansCyrl-700.eot");
+  src: local("MuseoSansCyrl-700"), url("fonts/museo/MuseoSansCyrl-700.eot?#iefix") format("embedded-opentype"), url("fonts/museo/MuseoSansCyrl-700.woff") format("woff"), url("fonts/museo/MuseoSansCyrl-700.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo Sans Cyrl 500';
+  src: url("fonts/museo/MuseoSansCyrl-500.eot");
+  src: local("MuseoSansCyrl-500"), url("fonts/museo/MuseoSansCyrl-500.eot?#iefix") format("embedded-opentype"), url("fonts/museo/MuseoSansCyrl-500.woff") format("woff"), url("fonts/museo/MuseoSansCyrl-500.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+/***** Fontello *****/
+@font-face {
+  font-family: 'fontello';
+  src: url("fonts/fontello.eot?56246910");
+  src: url("fonts/fontello.eot?56246910#iefix") format("embedded-opentype"), url("fonts/fontello.woff2?56246910") format("woff2"), url("fonts/fontello.woff?56246910") format("woff"), url("fonts/fontello.ttf?56246910") format("truetype"), url("fonts/fontello.svg?56246910#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?56246910#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-angle-down:before {
+  content: '\f107';
+}
+
+/* '' */
+.icon-angle-left:before {
+  content: '\f104';
+}
+
+/* '' */
+.icon-angle-right:before {
+  content: '\f105';
+}
+
+/* '' */
+/***** Header **** */
+.top-nav {
+  padding: 35px 15px 30px 15px;
+  margin-bottom: 7px;
+}
+.top-nav_logo {
+  display: block;
+}
+.top-nav_logo img {
+  width: 246px;
+  margin-right: 18px;
+}
+.top-nav_menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.top-nav_menu > li {
+  margin-right: 0;
+}
+.top-nav_menu > li:last-child {
+  margin-right: 0;
+}
+.top-nav_menu > li > a {
+  display: block;
+  padding: 10px 15px 20px;
+  text-decoration: none;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 16px;
+  font-weight: normal;
+}
+.top-nav_menu > li > a i {
+  margin: 0;
+}
+.top-nav_menu > li > a i:before {
+  margin: 0 4px 0 2px;
+  width: 8px;
+}
+.top-nav_menu > li > a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #ffe400;
+  transform: translateY(7px) scale(0);
+  transition: all 0.2s;
+}
+.top-nav_menu > li > a:hover {
+  text-decoration: none;
+  color: #2c6ed2;
+}
+.top-nav_menu > li > a:hover::after {
+  transform: translateY(7px) scale(1);
+}
+.top-nav_menu > li ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  background: #fff;
+  z-index: 100;
+  transition: all 0.2s;
+  box-shadow: 0 9px 19px 1px rgba(48, 39, 131, 0.5);
+}
+.top-nav_menu > li ul li:first-child a {
+  padding-top: 35px;
+}
+.top-nav_menu > li ul li:last-child a {
+  padding-bottom: 35px;
+}
+.top-nav_menu > li ul li a {
+  display: block;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 700";
+  font-size: 16px;
+  font-weight: normal;
+  transition: all 0.2s;
+}
+.top-nav_menu > li ul li a::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 5px;
+  height: 4px;
+  background-color: #ffe400;
+  transform: translate(-30px, -10px) scale(0);
+  transition: all 0.2s;
+}
+.top-nav_menu > li ul li a:hover {
+  transition: all 0.2s;
+}
+.top-nav_menu > li ul li a:hover::after {
+  display: block;
+  transform: translate(-40px, -10px) scale(1);
+  width: 30px;
+}
+.top-nav_menu > li ul li a:hover {
+  transform: translateX(10px);
+  color: #2c6ed2;
+}
+.top-nav_menu li:hover ul {
+  display: block;
+}
+.top-nav_phone {
+  display: block;
+  padding-top: 4px;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Museo Sans Cyrl 700";
+  font-weight: normal;
+  color: #302783;
+}
+
+/***** Slick slider **** */
+.slider_wrap {
+  width: 1200px;
+}
+
+.slick-arrow-new {
+  position: absolute;
+  top: 187px;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 100;
+  outline: none;
+}
+.slick-arrow-new:hover {
+  color: #ffe400;
+}
+
+.slick-prev-new {
+  left: -9px;
+  text-align: right;
+}
+
+.slick-next-new {
+  right: -7px;
+  text-align: left;
+}
+
+.new-dots {
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  bottom: -30px;
+  text-align: center;
+}
+.new-dots li {
+  display: inline-block;
+}
+.new-dots li button {
+  font-size: 0;
+  line-height: 0;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-color: #000000;
+  opacity: 0.2;
+}
+.new-dots .slick-active button {
+  background-color: #302783;
+  opacity: 1;
+}
+
+/***** Production and services **** */
+.production .title, .services .title {
+  height: 52px;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 72px;
+  margin-bottom: 87px;
+  margin-top: 53px;
+}
+.production ul, .services ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.production ul li, .services ul li {
+  margin-bottom: 75px;
+}
+.production ul li a, .services ul li a {
+  display: block;
+  width: 373px;
+  text-decoration: none;
+  position: relative;
+}
+.production ul li a svg, .services ul li a svg {
+  max-height: 73px;
+  max-width: 73px;
+  fill: #302783;
+}
+.production ul li a span, .services ul li a span {
+  display: inline-block;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  vertical-align: top;
+  width: 62%;
+  margin-left: 15px;
+}
+.production ul li a::before, .services ul li a::before {
+  content: "";
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  background-color: #ffe400;
+  border-radius: 50%;
+  z-index: -1;
+  top: -12px;
+}
+.production ul li a:hover span, .services ul li a:hover span {
+  color: #2c6ed2;
+}
+.production ul li a:hover svg, .services ul li a:hover svg {
+  fill: #2c6ed2;
+}
+
+.production {
+  margin-bottom: 42px;
+}
+
+/***** Services **** */
+.services {
+  margin-bottom: 63px;
+}
+
+/***** Advantages **** */
+.advantages-wrap {
+  height: 363px;
+  padding: 41px 49px;
+  background: url(images/worker.png) no-repeat 96%, linear-gradient(to right, #302783 65%, #ffe400 65%);
+  margin-bottom: 30px;
+}
+.advantages-wrap .title {
+  color: #ffffff;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 51px;
+  margin-bottom: 38px;
+}
+.advantages-wrap ul {
+  list-style: none;
+}
+.advantages-wrap ul li {
+  color: #ffffff;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+.advantages-wrap ul li::before {
+  content: url(icons/check.svg);
+  margin-right: 30px;
+}
+
+/***** Reauest **** */
+.request {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(75deg, #302783 53%, #ffe400 53%);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.request img {
+  position: absolute;
+  left: 45%;
+  top: -19%;
+}
+.request .title {
+  color: #ffffff;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  margin-left: 84px;
+}
+.request form {
+  padding: 30px 10px 10px 10px;
+  margin-left: 268px;
+}
+.request form input[type^="t"] {
+  display: block;
+  width: 320px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border: none;
+}
+.request form input[type^="t"]::placeholder {
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px;
+}
+.request form input[type="tel"] {
+  margin-bottom: 15px;
+}
+.request form input[type="checkbox"] {
+  display: none;
+}
+.request form input[type="checkbox"] + label {
+  position: relative;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 13px;
+  font-weight: 400;
+  padding-left: 30px;
+}
+.request form input[type="checkbox"] + label:hover {
+  cursor: pointer;
+}
+.request form input[type="checkbox"] + label + a {
+  text-decoration: underline;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 13px;
+  font-weight: 400;
+}
+.request form input[type="checkbox"] + label + a:hover {
+  text-decoration: none;
+}
+.request form input[type="checkbox"] + label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+  left: -1px;
+}
+.request form input[type="checkbox"]:checked + label::before {
+  background: url("icons/checked.png") no-repeat center #fff;
+}
+.request input[type="button"] {
+  width: 320px;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid #302783;
+  margin-top: 17px;
+  background-color: #ffe400;
+  color: #302783;
+  font-family: "Museo Sans Cyrl 500";
+  font-size: 18px;
+  font-weight: 400;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 45px;
+  grid-column-gap: 10px;
+}
+footer ul {
+  list-style: none;
+}
+footer a svg {
+  fill: red;
+  vertical-align: middle;
+}
+footer .made-by {
+  grid-column: 4/5;
+}
+
+.seosection .seotext {
+  height: 370px;
+  font-family: "Museo Sans Cyrl -500";
+  font-size: 16px;
+  font-weight: 400;
+  color: #302783;
+}
+.seosection .seotext h1 {
+  font-family: "Museo Sans Cyrl -700";
+  font-size: 36px;
+  line-height: 44px;
+}
+.seosection .seowindow {
+  background: url(images/window.png);
+}
+
+#seoscroll {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+  padding: 10px;
+}
+
+/* media */
+@media (min-width: 1200px) {
+  .container, .row {
+    max-width: 1200px;
+  }
+}

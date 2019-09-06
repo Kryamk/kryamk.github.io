@@ -1,0 +1,441 @@
+@import "colors"
+@import "reset"
+@import "fonts"
+
+
+/***** Header *****/
+
+.top-nav
+	padding: 35px 15px 30px 15px
+	margin-bottom: 7px
+	// background: #C9BBBB
+	&_logo
+		display: block
+		img
+			width: 246px
+			margin-right: 18px
+	&_menu
+		list-style: none
+		padding: 0
+		display: flex
+		> li
+			margin-right: 0
+			&:last-child
+				margin-right: 0
+			> a
+				display: block
+				padding: 10px 15px 20px
+				text-decoration: none
+				color: $active-color
+				font-family: 'Museo Sans Cyrl 700'
+				font-size: 16px
+				font-weight: normal
+				i
+					margin: 0
+					&:before
+						margin: 0 4px 0 2px
+						width: 8px
+				&::after
+					content: '' 
+					display: block
+					width: 100%
+					height: 4px
+					background-color: $active-bg-color
+					transform: translateY(7px) scale(0)
+					transition: all 0.2s
+				&:hover
+					text-decoration: none
+					color: $active-anchor
+					&::after
+						transform: translateY(7px) scale(1)
+
+			ul
+				display: none
+				position: absolute
+				list-style: none
+				background: $body-bg
+				// padding: 25px 0
+				z-index: 100
+				// top: 52px
+				// right: 288px
+				transition: all 0.2s
+				box-shadow: 0 9px 19px 1px rgba(48, 39, 131, 0.5)
+				// box-shadow: 0 11px 24px 1px rgba(141, 42, 234, 0.5)
+				li
+					&:first-child a
+						padding-top: 35px
+					&:last-child a
+						padding-bottom: 35px
+					a 
+						display: block
+						padding: 10px 30px
+						text-decoration: none
+						color: $active-color
+						font-family: 'Museo Sans Cyrl 700'
+						font-size: 16px
+						font-weight: normal
+						transition: all 0.2s
+						&::after
+							position: absolute
+							content: '' 
+							display: block
+							width: 5px
+							height: 4px
+							background-color: $active-bg-color
+							transform: translate(-30px, -10px) scale(0)
+							transition: all 0.2s
+						&:hover
+							transition: all 0.2s
+							&::after
+								display: block
+								transform: translate(-40px, -10px) scale(1)
+								width: 30px
+					a:hover
+						transform: translateX(10px)
+						color: $active-anchor
+		li:hover ul
+			display: block			
+	&_phone
+		display: block
+		padding-top: 4px
+		text-decoration: none
+		font-size: 22px
+		font-family: "Museo Sans Cyrl 700"
+		font-weight: normal
+		color: $active-color
+		
+
+/***** Slick slider *****/
+		
+
+.slider_wrap
+	width: 1200px
+.slick-arrow-new
+	position: absolute
+	// left: -23px
+	top: 187px
+	width: 47px
+	height: 47px
+	border-radius: 50%
+	border-style: none
+	background-color: $body-bg
+	font-size: 28px
+	font-weight: 700
+	cursor: pointer
+	z-index: 100
+	outline: none
+	&:hover
+		color: $active-bg-color
+.slick-prev-new
+	left: -9px
+	text-align: right
+.slick-next-new
+	right: -7px 
+	text-align: left
+
+.new-dots
+	position: absolute
+	list-style: none
+	width: 100%
+	bottom: -30px
+	text-align: center
+	& li
+		display: inline-block
+		& button
+			font-size: 0
+			line-height: 0
+			width: 12px
+			height: 12px	
+			margin-right: 10px
+			border: none
+			border-radius: 50%
+			outline: none
+			cursor: pointer
+			background-color: #000000
+			opacity: 0.2
+	& .slick-active button 
+		background-color: $active-color
+		opacity: 1
+		
+/***** Production and services *****/	
+	
+.production, .services
+	& .title
+		height: 52px
+		color: $active-color
+		font-family: "Museo Sans Cyrl 500"
+		font-size: 56px
+		font-weight: 400
+		line-height: 72px
+		margin-bottom: 87px
+		margin-top: 53px
+	& ul
+		display: flex
+		list-style: none
+		flex-wrap: wrap
+		justify-content: space-between
+		& li
+			margin-bottom: 75px
+			& a 
+				display: block
+				width: 373px
+				text-decoration: none
+				position: relative
+				& svg
+					max-height: 73px
+					max-width: 73px
+					fill: $active-color
+				& span
+					display: inline-block
+					color: $active-color
+					font-family: "Museo Sans Cyrl 500"
+					font-size: 26px
+					font-weight: 400
+					line-height: 30px
+					vertical-align: top
+					width: 62%
+					margin-left: 15px
+				&::before
+					content: ""
+					position: absolute
+					width: 106px
+					height: 106px
+					background-color: $active-bg-color
+					border-radius: 50%
+					z-index: -1
+					top: -12px
+				&:hover span
+					color: $active-anchor
+				&:hover svg
+					fill: $active-anchor
+.production
+	margin-bottom: 42px
+	
+/***** Services *****/
+
+.services
+	margin-bottom: 63px 
+	
+/***** Advantages *****/
+
+.advantages-wrap
+	height: 363px
+	// width: 1170px
+	padding: 41px 49px
+	background: url(images/worker.png) no-repeat 96%, linear-gradient(to right, $active-color 65%, $active-bg-color 65%)
+	margin-bottom: 30px
+	& .title
+		color: #ffffff
+		font-family: "Museo Sans Cyrl 500"
+		font-size: 56px
+		font-weight: 400
+		line-height: 51px
+		margin-bottom: 38px
+	& ul
+		list-style: none
+		& li
+			color: #ffffff
+			font-family: "Museo Sans Cyrl 500"
+			font-size: 18px
+			font-weight: 400
+			padding-bottom: 10px
+			&::before
+				content: url(icons/check.svg)
+				margin-right: 30px
+				
+/***** Reauest *****/
+
+
+.request
+	width: 100%
+	height: 420px
+	background: linear-gradient(75deg, $active-color 53%, $active-bg-color 53%)
+	position: relative
+	display: flex
+	align-items: center
+	& img
+		position: absolute
+		left: 45%
+		top: -19%
+	& .title
+		color: #ffffff
+		font-family: "Museo Sans Cyrl 500"
+		font-size: 72px
+		font-weight: 400
+		line-height: 72px
+		margin-left: 84px
+	& form
+		padding: 30px 10px 10px 10px
+		margin-left: 268px
+		& input[type^="t"]
+			display: block
+			width: 320px
+			height: 60px
+			border-radius: 5px
+			background-color: #ffffff
+			margin-bottom: 10px
+			border: none
+			&::placeholder
+				color: $active-color
+				font-family: "Museo Sans Cyrl 500"
+				font-size: 18px
+				font-weight: 400
+				padding: 15px
+		& input[type="tel"]
+			margin-bottom: 15px 
+		& input[type="checkbox"] 
+			display: none
+			& + label
+				position: relative
+				color: $active-color
+				font-family: "Museo Sans Cyrl 500"
+				font-size: 13px
+				font-weight: 400
+				padding-left: 30px
+				&:hover
+					cursor: pointer
+				+ a
+					text-decoration: underline
+					color: $active-color
+					font-family: "Museo Sans Cyrl 500"
+					font-size: 13px
+					font-weight: 400
+					&:hover
+						text-decoration: none
+				&::before
+					content: ""
+					display: inline-block
+					position: absolute
+					height: 20px
+					width: 20px
+					border-radius: 3px
+					background-color: #fff
+					left: -1px
+			&:checked + label::before 
+				background: url("icons/checked.png") no-repeat center #fff
+	& input[type="button"]
+		width: 320px
+		height: 60px
+		border-radius: 5px
+		border: 2px solid #302783
+		margin-top: 17px
+		background-color: $active-bg-color
+		color: $active-color
+		font-family: "Museo Sans Cyrl 500"
+		font-size: 18px
+		font-weight: 400
+		
+footer
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-row-gap: 45px
+	grid-column-gap: 10px
+	& ul 
+		list-style: none
+	& a svg
+		fill: red
+		vertical-align: middle
+	& .made-by
+		grid-column: 4/5
+
+.seosection
+	& .seotext
+		height: 370px
+		font-family: "Museo Sans Cyrl -500"
+		font-size: 16px
+		font-weight: 400
+		color: $active-color
+		& h1
+			font-family: "Museo Sans Cyrl -700"
+			font-size: 36px
+			line-height: 44px
+	& .seowindow
+		background: url(images/window.png)
+
+
+
+
+#seoscroll
+	position: relative
+	width: 200px
+	height: 200px
+	margin: 100px auto	
+	padding: 10px				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 	.slick-dots {
+//     position: absolute;
+//     bottom: -25px;
+//     display: block;
+//     width: 100%;
+//     padding: 0;
+//     margin: 0;
+//     list-style: none;
+//     text-align: center;
+
+// .slick-dots li {
+// position: relative;
+//     display: inline-block;
+//     width: 20px;
+//     height: 20px;
+//     margin: 0 5px;
+//     padding: 0;
+//     cursor: pointer;
+
+// .slick-dots li button {
+//     font-size: 0;
+//     line-height: 0;
+//     display: block;
+//     width: 20px;
+//     height: 20px;
+//     padding: 5px;
+//     cursor: pointer;
+//     color: transparent;
+//     border: 0;
+//     outline: none;
+//     background: transparent;
+
+// .slick-dots li button:before {
+//     font-family: 'slick';
+//     font-size: 6px;
+//     line-height: 20px;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 20px;
+//     height: 20px;
+//     content: '•';
+//     text-align: center;
+//     opacity: .25;
+//     color: black;
+//     -webkit-font-smoothing: antialiased;
+// .slick-dots li button:hover, .slick-dots li button:focus {
+//     outline: none;
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media"
